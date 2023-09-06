@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>template</title>
+
+    <link rel="stylesheet" href="./styles.css" />
+    <script type="module" src="./main.js"></script>
+
+    <style>
+      #testdiv {
+        background-color: lightgray;
+      }
+
+      #img1 {
+        width: 30%;
+        padding: 5%;
+        margin: 5%;
+        box-shadow: 20px 20px 10px 0px lightgray;
+      }
+
+      .TestContainer p {
+        background: red;
+      }
+    </style>
+  </head>
+  <body>
+    https://statichtmltest.stackblitz.io/clipboard/index.html
+
+    <div id="app">this is #app div</div>
+    <div id="test">this is #test div</div>
+
+    <div class="TestContainer">
+      this is .TestContainer div
+      <p>this is test p in div,css selector is .TestContainer p</p>
+      <div id="testdiv">this #testdiv backgroud changed by css</div>
+
+      <div class="InputContainer">
+        this is .InputContainer <br />
+        <input placeholder="#binput" id="binput" /> <br />
+        <textarea placeholder="#bta" id="bta">#bta</textarea>
+      </div>
+
+      <div class="ButtonContainer">
+        <button class="TestButton" id="testb1">#testb1</button>
+        <button class="TestButton" id="testb2">#testb2</button>
+        <button class="TestButton" id="testb3">#testb3</button>
+      </div>
+    </div>
+
+    <br />
+    <p>this is a p tag</p>
+
+    <div class="ImgDiv">
+      this is .ImgDiv <br />
+      <img
+        src="https://bubu.suisuy.eu.org/doc/img/demotrans.png"
+        alt="img1"
+        id="img1"
+      />
+      <img src="https://bubu.suisuy.eu.org/images/icon-128.png" alt="img2" />
+    </div>
+
+    <div class="IframeDiv">
+      this is .IframeDiv <br />
+
+      <!-- <iframe
+        src="https://mz7x62j15q6v63.embednotionpage.com/qnote-83bdd917eafe4f9a8d5a168ab06832ff"
+        style="width: 100%; height: 500px; padding: 0"
+      > 
+      </iframe> -->
+    </div>
+
+    <h1>text</h1>
+    <div class="Main">
+      Main is green
+      <div class="textdiv">
+        testb1 testb2 is global available . This code might not work on touch
+        devices like phones because it's primarily designed to handle mouse
+        events, which are different from touch events. Touch devices use touch
+        events, such as "touchstart," "touchmove," and "touchend," to interact
+        with elements on the screen. The code you provided is using mouse events
+        like "pointerdown," "pointermove," and "pointerup," which are tailored
+        for desktop environments with a mouse. To make this code work on touch
+        devices, you'll need to modify it to handle touch events instead of
+        mouse events. You should replace the "pointerdown" event with
+        "touchstart," "pointermove" with "touchmove," and "pointerup" with
+        "touchend." Additionally, you'll need to adjust the event properties to
+        work with touch coordinates, as they are different from mouse
+        coordinates. Here's the modified code that should work on both desktop
+        and touch devices: javascript Copy code
+        dragElement(appView.bubuContainer); function dragElement(elmnt) { var
+        pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0; // For touch devices, use
+        touchstart event appView.bubuIcon.addEventListener('touchstart',
+        dragTouchStart); function dragTouchStart(e) { e = e || window.event;
+        e.preventDefault(); // Get the initial touch position var touch =
+        e.touches[0]; pos3 = touch.clientX; pos4 = touch.clientY; // Set
+        touchmove and touchend event listeners
+        document.addEventListener('touchmove', elementTouchMove);
+        document.addEventListener('touchend', closeDragElement); } function
+        elementTouchMove(e) { e = e || window.event; e.preventDefault(); //
+        Calculate touch position changes var touch = e.touches[0]; pos1 = pos3 -
+        touch.clientX; pos2 = pos4 - touch.clientY; pos3 = touch.clientX; pos4 =
+        touch.clientY; // Update element position elmnt.style.top =
+        (elmnt.offsetTop - pos2) + "px"; elmnt.style.left = (elmnt.offsetLeft -
+        pos1) + "px"; } function closeDragElement() { // Remove touchmove and
+        touchend event listeners document.removeEventListener('touchmove',
+        elementTouchMove); document.removeEventListener('touchend',
+        closeDragElement); } } Remember that touch events have some differences
+        from mouse events, such as handling multiple touches, and you might need
+        to consider those aspects if your application involves multi-touch
+        interactions.
+      </div>
+    </div>
+
+    <div class="Foot">end</div>
+  </body>
+</html>

@@ -1,0 +1,14 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  scrollbar-color: red orange;
+  scrollbar-width: 30px;
+}
+
+nav a[aria-current='page'] {
+  color: #000;
+  background-color: #d4d4d4;
+}
